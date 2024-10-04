@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>75Years</title>
+    <style>
+          body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #fdffcf;
+        }
+        .title{
+            width: 100%;
+            height:14em;
+            background-image: linear-gradient(to top, #6bd1cb, #5acad1, #4ec3d7, #49bbdc, #4db3de, #47abdd, #46a2dc, #4999da, #3a8fd8, #2b86d5, #1b7cd2, #0772ce);
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .title h1 {
+            text-align: center;
+            font-size: 60px;
+            color: rgb(233, 88, 69);
+            margin: 0;
+        }
+        .title2 {
+        width: 100%;
+        height: 5em;
+        background-color: #de3636;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        }
+        .daohang {
+            margin-right: auto;
+            float: right;
+            margin-left: 10px;
+            color: white;
+            font-size: 20px;
+        }
+        .lianjie{
+            float: right;
+            width: 20%;
+            background-color: #de3636;
+            display: flex;
+            font-size: 16px;
+        }
+        .lianjie a{
+            color: white;
+            text-decoration: none;
+        }
+        .lianjie a:hover{
+            color: #ffde00ff;
+        }
+        .clPhotos{
+            width: 100%;
+            position: relative;
+        }
+        /* 轮播图样式 */
+        .carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: 2em auto;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .carousel-slide {
+            display: none;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            background: rgba(218, 95, 95, 0.5);
+            color: #ffffff;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 20px;
+        }
+
+        /* 下一页和上一页按钮 */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: transparent;
+            color:transparent;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color:rgba(255, 255, 255, 0.5);
+        }
+
+        .dot-container {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #ffde00ff;
+            transition: 0.4s;
+        }
+
+        h3{
+            margin-top: 80px;
+            text-align: center;
+            font-size: 20px;
+            color: #de3636;
+        }
+        .year{
+            color: #ffde00ff ;font-size: 100px;
+        }
+        .year2{
+            color: #ffde00ff ;font-size: 28px;
+        }
+        hr{
+            color: #de3636;
+        }
+        .conleft{
+            float: left;
+            font-size: 22px;
+            width: 40%;
+            height: 500px;
+            margin-left: 100px;
+            background-color: #de3636;
+            border-radius: 15px;
+        }
+        .conleft p{
+            margin: 66px;
+        }
+        .conright{
+            float: right;
+            font-size: 22px;
+            width: 40%;
+            height: 500px;
+            margin-left: 120px;
+            background-color: #de3636;
+            border-radius: 15px;
+        }
+        li{
+            margin: 18px;
+        }
+        li:hover{
+            color: #ffde00ff;
+            transition:0.4s;
+        }
+        ul{
+            margin: 66px;
+        }
+        .content{
+            display: flex;
+        }
+        .achphotos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+        .achbox{
+            margin-left: 70px;
+            margin-top: 20px;
+            margin-bottom:40px;
+            width: 700px;           
+            background-color: #d15353;
+            border-radius: 15px;
+        }
+        .achphoto{
+            display: flex;
+            align-items: center;
+        }
+        .achphoto img{
+            padding:15px;
+            border-radius: 15px;
+            width: 350px;
+        }
+        .achphoto span{
+            color: #000000;
+            font-size: 21px;
+            margin-right: 20px;
+        }
+        .achphoto span:hover{
+            color: #ffde00ff;
+            transition: 0.4s;
+        }
+        .achphoto img:hover{
+            transform: scale(1.02);
+            transition: 0.4s;
+        }
+
+        .last{
+            width: 100%;
+            height: 150px;
+            background-color: #de3636;
+        }
+        #last{
+            margin: 0;
+            height: 20px;
+            background-color: #ffde00ff;
+        }
+        .last p{
+            margin: 0;
+            text-align: center;
+            color: #e9cece;
+        }
+        .last h2{
+            font-size: 40px;
+            text-align: center;
+            color:#ffde00ff;
+            margin: 0;
+            margin-bottom: 30px;
+        }
+        #bgc {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #de3636;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 20px;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        }
+
+        #bgc:hover {
+            background-color: #c62828;
+        }
+        .daohang {
+        position: relative;
+        margin-right: auto;
+        float: right;
+        margin-left: 10px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .daohang:hover{
+        transition: 0.4s;
+        color: #ffde00ff;
+    }
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #de3636;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .nav-menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 5px 0;
+    }
+
+    .nav-menu a:hover {
+        color: #ffde00ff;
+    }
+    </style>
+</head>
+<body>
+    <div class="title"><h1>热烈庆祝中华人民共和国成立<span class="year">75</span>周年！</h1><button id="bgc">切换背景</button></div>
+    <div class="title2">
+        <div class="daohang">
+            <span>导航</span>
+            <div class="nav-menu">
+                <a href="#special-activities">活动</a>
+                <a href="#special-comments">评论</a>
+                <a href="#special-achievements">成就</a>
+            </div>
+        </div> 
+        <div class="lianjie"><a href="http://www.xinhuanet.com/">新华网</a></div>
+        <div class="lianjie"><a href="http://www.people.com.cn/">人民网</a></div>
+        <div class="lianjie"><a href="https://tv.cctv.com/">央视网</a></div>
+    </div>
+    <h3 id="special-activities">中华人民共和国成立<span class="year2">75</span>周年特别活动</h3>
+    <div class="clPhotos">
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="imgs/001.png" alt="庆祝活动1">
+                <div class="carousel-caption">庆祝中华人民共和国成立75周年招待会在京隆重举行 习近平发表重要讲话</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="imgs/002.png" alt="庆祝活动2">
+                <div class="carousel-caption">习近平在庆祝中华人民共和国成立75周年招待会上发表重要讲话</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="imgs/003.png" alt="庆祝活动3">
+                <div class="carousel-caption">习近平在庆祝中华人民共和国成立75周年招待会上发表重要讲话</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="imgs/004.png" alt="庆祝活动4">
+                <div class="carousel-caption">习近平在庆祝中华人民共和国成立75周年招待会上发表重要讲话</div>
+            </div>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        </div>
+        <div class="dot-container">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+    </div>
+    <hr>
+    <h3 id="special-comments">中华人民共和国成立<span class="year2">75</span>周年特别评论</h3>
+    <div class="content">
+        <div class="conleft">
+            <p>习近平总书记指出：“爱国主义精神深深植根于中华民族心中，是中华民族的精神基因，维系着华夏大地上各个民族的团结统一，激励着一代又一代中华儿女为祖国发展繁荣而不懈奋斗。” </p>
+            <p>新华社社评：共同谱写中国式现代化建设新篇章——热烈庆祝中华人民共和国成立75周年
+                岁月如歌，征途如虹。在以中国式现代化全面推进强国建设、民族复兴伟业的关键时期，我们迎来中华人民共和国75周年华诞。天安门广场花团锦簇，五星红旗迎风飘扬，各族人民共同欢庆伟大祖国生日。</p>
+        </div>
+        <div class="conright">
+           <ul>
+            <li>新华社评论员：把中国式现代化不断推向前进</li>
+            <li>以习近平同志为核心的党中央高举爱国主义伟大旗帜引领强国建设、民族复兴纪实</li>
+            <li>新华社社评：共同谱写中国式现代化建设新篇章——热烈庆祝中华人民共和国成立75周年</li>
+            <li>新华时评丨生日快乐，新中国！</li>
+            <li>钟华论：在新征程上谱写改革开放新篇章</li>
+            <li>加强生态文明建设 推进绿色低碳发展——来自中国经济圆桌会的观察</li>
+           </ul>
+        </div>
+    </div>
+    <hr>
+    <h3 id="special-achievements">中华人民共和国成立<span class="year2">75</span>周年特别成就</h3>
+    <div class="achphotos">
+        <div class="achbox">
+            <div class="achphoto"><img src="imgs/005.png" alt=""><span>数说中国｜综合国力大幅跃升 国际影响力显著增强</span></div>
+        </div>
+        <div class="achbox">
+            <div class="achphoto"><img src="imgs/006.png" alt=""><span>数说中国｜区域协调发展迈向高水平 重大战略实施取得新进展</span></div>
+        </div>
+        <div class="achbox">
+            <div class="achphoto"><img src="imgs/007.png" alt=""><span>数说中国丨建筑业持续发展 建设成就惠及民生</span></div>
+        </div>
+        <div class="achbox" >
+            <div class="achphoto"><img src="imgs/008.png" alt=""><span>数说中国丨1979年至2023年我国对世界经济增长年均贡献率居世界首位</span></div>
+        </div>
+    </div>
+    <hr id="last">
+    <div class="last">
+        <h2>诚挚的爱，献与祖国！</h2>
+        <p>制作单位：@成都信息工程大学</p>
+
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n >= slides.length) {slideIndex = 0;}    
+            if (n < 0) {slideIndex = slides.length - 1;}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex].style.display = "block";  
+            dots[slideIndex].className += " active";
+        }
+
+        document.querySelector('.prev').addEventListener('click', function(){
+            showSlides(--slideIndex);
+        });
+
+        document.querySelector('.next').addEventListener('click', function(){
+            showSlides(++slideIndex);
+        });
+
+        for (let i = 0; i < document.getElementsByClassName('dot').length; i++) {
+            document.getElementsByClassName('dot')[i].addEventListener('click', function(){
+                showSlides(slideIndex = i);
+            });
+        }
+        setInterval(function(){
+            showSlides(++slideIndex);
+        }, 5000);
+        const bgcButton = document.getElementById('bgc');
+        const colors = ['#fdffcf', '#ffe6e6', '#e6f3ff', '#f0ffe6']; // 背景色列表
+        let currentColorIndex = 0;
+
+        bgcButton.addEventListener('click', function() {
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            document.body.style.backgroundColor = colors[currentColorIndex];
+        });
+
+        
+        const daohang = document.querySelector('.daohang');
+        const navMenu = document.querySelector('.nav-menu');
+
+        daohang.addEventListener('mouseenter', () => {
+            navMenu.style.display = 'block';
+        });
+
+        daohang.addEventListener('mouseleave', () => {
+            navMenu.style.display = 'none';
+        });
+
+        // 平滑滚动到目标位置
+        document.querySelectorAll('.nav-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
